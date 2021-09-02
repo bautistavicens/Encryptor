@@ -94,15 +94,17 @@ public class Encryptor {;
 		}
 	}
 	
-	public static String decryptData(byte[] dataToDecrypt, SecretKey key, Cipher cipher) {
+	public static char[] decryptData(byte[] dataToDecrypt, SecretKey key, Cipher cipher) {
 		try {
 			cipher.init(Cipher.DECRYPT_MODE, key);
 			
 			byte[] dataDecrypted = cipher.doFinal(dataToDecrypt);
 		
 			String dataString = new String(dataDecrypted) ;
-		 
-			return dataString; 
+			
+			char[] dataChar = dataString.toCharArray();
+			
+			return dataChar; 
 		
 		} catch (Exception e) {
 			return null;
