@@ -68,7 +68,7 @@ public class Encryptor {;
 			
 		}
 	}
-	private byte[] toBytes(char[] chars) {
+	private static byte[] toBytes(char[] chars) {
 		  CharBuffer charBuffer = CharBuffer.wrap(chars);
 		  ByteBuffer byteBuffer = Charset.forName(unicodeFormat).encode(charBuffer);
 		  byte[] bytes = Arrays.copyOfRange(byteBuffer.array(),
@@ -77,7 +77,7 @@ public class Encryptor {;
 		  return bytes;
 	}
 	
-	public byte[] encryptData(char[] dataToEncrypt, SecretKey key, Cipher cipher) {
+	public static byte[] encryptData(char[] dataToEncrypt, SecretKey key, Cipher cipher) {
 		try {
 			
 			byte[] dataB = toBytes(dataToEncrypt);
@@ -94,7 +94,7 @@ public class Encryptor {;
 		}
 	}
 	
-	public String decryptData(byte[] dataToDecrypt, SecretKey key, Cipher cipher) {
+	public static String decryptData(byte[] dataToDecrypt, SecretKey key, Cipher cipher) {
 		try {
 			cipher.init(Cipher.DECRYPT_MODE, key);
 			
