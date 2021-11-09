@@ -29,6 +29,6 @@ Español:
 			+ cipherGen(). return Cipher:
 			
 				Utiliza este metodo para generar un Cipher para el dato que deseas encriptar.
-				Es importatne utilizar esta función ya que utiliza el algoritmo "AES" para el crifrado.
+				Es importante utilizar esta función ya que utiliza el algoritmo "AES" para el crifrado.
 				
 		
